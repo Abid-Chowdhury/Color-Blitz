@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Color Blitz</title>
+</head>
+<body>
+    <div class="topbar">
+        <img src="images/icon.png" alt="app icon image">
+        <h1>Color Blitz</h1>
+    </div>
+
+    <div class="game-top-section">
+        <div class="guess-label-container">
+            <h1 id="red-guess">0</h1>
+            <hr>
+            <h1 id="green-guess">0</h1>
+            <hr>
+            <h1 id="blue-guess">0</h1>
+        </div>
+        <div class="score-container">
+            <div class="score-numbers-container">
+                <div class="score1">
+                    <h1>0</h1>
+                </div>
+                <div class="score2">
+                    <h1>0</h1>
+                </div>
+                <div class="score3">
+                    <h1>0</h1>
+                </div>
+                <div class="score4">
+                    <h1>0</h1>
+                </div>
+                <div class="score5">
+                    <h1>0</h1>
+                </div>
+            </div>
+        </div>
+        <div class="accuracy-container">
+            <div class="accuracy-score">
+                <h1>0</h1>
+                <h1>%</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="game-bottom-section">
+        <div class="color-selector-container">
+            <div class="red-selector">
+                <h2>R</h2>
+                <input type="range" min="1" max="100" value="0" class="red-selector">      
+            </div>
+            <div class="green-selector">
+                <h2>G</h2>
+                <input type="range" min="1" max="100" value="0" class="green-selector">      
+            </div>
+            <div class="blue-selector">
+                <h2>B</h2>
+                <input type="range" min="1" max="100" value="0" class="blue-selector">      
+            </div>
+        </div>
+
+        <div class="submit-button-container">
+            <div class="submit-button">
+                <img>
+            </div>
+        </div>
+
+        <div class="colors-container">
+            <div class="guess-color"></div>
+            <div class="random-color"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
