@@ -1,6 +1,15 @@
+:root {
+    --bg-dark: rgb(30, 30, 30);
+    --bg-light: rgb(60, 60, 60);
+    --accent: #FFFEF2;
+    --red: rgb(233, 91, 112);
+    --blue: rgb(84, 218, 253);
+    --green: rgb(100,253,100);
+}
+
 body {
-    background-color: rgb(30, 30, 30);
-    color: #FFFEF2;
+    background-color: var(--bg-dark);
+    color: var(--accent);
     padding-left: 100px;
     padding-right: 100px;
 }
@@ -39,26 +48,31 @@ body {
 
 /* GUESS LABEL CONTAINER */
 .guess-label-container {
-    background-color: rgb(60, 60, 60);
+    background-color: var(--bg-light);
     border-radius: 10px;
-    border: 5px solid #FFFEF2;
+    border: 5px solid var(--accent);
     width: 300px;
     justify-content: space-evenly;
+
+    & h1 {
+        width: 100px;
+        text-align: center;
+    }
 
     & hr {
         height: 98%;
         margin: 0;
-        border: 3px solid #FFFEF2;
+        border: 3px solid var(--accent);
     }
 }
 
 /* SCORE CONTAINER */
 .score-numbers-container {
     & div {
-        background-color: #FFFEF2;
+        background-color: var(--accent);
         border-radius: 10px;
-        color:rgb(60, 60, 60);
-        border: 5px solid rgb(60, 60, 60);
+        color: var(--accent);
+        border: 5px solid var(--accent);
         margin-top: auto;
         margin-bottom: auto;
         margin-left: 3px;
@@ -70,9 +84,9 @@ body {
 
 /* ACCURACY CONTAINER */
 .accuracy-container {
-    background-color: rgb(60, 60, 60);
+    background-color: var(--bg-light);
     border-radius: 10px;
-    border: 5px solid #FFFEF2;
+    border: 5px solid var(--accent);
     padding-left: 20px;
     padding-right: 20px;
     margin-left: 10%;
@@ -105,13 +119,13 @@ body {
 .submit-button-container {
     height: 180px;
     width: 120px;
-    background-color: rgb(60, 60, 60);
+    background-color: var(--bg-light);
 }
 
 /* COLORS CONTAINER */
 .colors-container {
     display: flex;
-    background-color: rgb(60, 60, 60);
+    background-color: var(--bg-light);
 
     & div {
         height: 180px;
