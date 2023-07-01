@@ -226,9 +226,26 @@ body {
 
 /* SUBMIT BUTTON */
 .submit-button-container {
-    height: 180px;
-    width: 120px;
-    background-color: var(--bg-light);
+    & .submit-button {
+        overflow: hidden;
+        height: 140px;
+        width: 120px;
+        border-radius: 7%;
+        padding-right: 7px;
+    }
+
+    & img {
+        width: 140px;
+        height: 140px;
+        cursor: pointer;
+        position: relative;
+        left: -6px;
+    }
+
+    & img:hover {
+        transform: translateY(15px);
+        transition: .1s ease;
+    }
 }
 
 /* COLORS CONTAINER */
