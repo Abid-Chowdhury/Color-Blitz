@@ -226,12 +226,16 @@ body {
 
 /* SUBMIT BUTTON */
 .submit-button-container {
+    margin-top: auto;
+    margin-bottom: auto;
+
     & .submit-button {
         overflow: hidden;
         height: 140px;
         width: 120px;
         border-radius: 7%;
         padding-right: 7px;
+        margin-bottom: 15px;
     }
 
     & img {
@@ -240,9 +244,15 @@ body {
         cursor: pointer;
         position: relative;
         left: -6px;
+        transform: translateY(15px);
     }
 
     & img:hover {
+        transform: translateY(0px);
+        transition: .1s ease;
+    }
+    
+    & img:active {
         transform: translateY(15px);
         transition: .1s ease;
     }
@@ -252,6 +262,7 @@ body {
 .colors-container {
     display: flex;
     background-color: var(--bg-light);
+    margin-left: 12%;
 
     & div {
         height: 180px;
