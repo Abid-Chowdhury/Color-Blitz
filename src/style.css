@@ -58,6 +58,18 @@ body {
         width: 100px;
         text-align: center;
     }
+    
+    & #red-guess {
+        color: var(--red);
+    }
+
+    & #green-guess {
+        color: var(--green);
+    }
+
+    & #blue-guess {
+        color: var(--blue);
+    }
 
     & hr {
         height: 98%;
