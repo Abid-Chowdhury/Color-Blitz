@@ -20,3 +20,16 @@ blueSlider.addEventListener("input", () => {
     const value = blueSlider.value
     blueValueDisplay.innerHTML = value
 })
+
+// SET RANDOM COLOR
+function setRandomColor() {
+    const random_R = Math.floor(Math.random() * 256)
+    const random_G = Math.floor(Math.random() * 256)
+    const random_B = Math.floor(Math.random() * 256)
+    const random_RGB = `rgb(${random_R}, ${random_G}, ${random_B})`
+    
+    const randomColorContainer = document.getElementById('random-color-container')
+    randomColorContainer.style.backgroundColor = random_RGB
+}
+
+setRandomColor()

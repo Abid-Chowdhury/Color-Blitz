@@ -263,9 +263,16 @@ body {
     display: flex;
     background-color: var(--bg-light);
     margin-left: 12%;
+    border-radius: 10px;
+    outline: 2px solid var(--accent);
 
     & div {
-        height: 180px;
+        height: 100%;
         width: 120px;
+    }
+
+    & hr {
+        border: 2px solid var(--accent);
+        margin: 0;
     }
 }
