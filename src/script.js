@@ -9,6 +9,7 @@ const blueValueDisplay = document.getElementById('blue-guess')
 var redGuess = 0
 var greenGuess = 0
 var blueGuess = 0
+var random_RGB = 0
 
 redSlider.addEventListener("input", () => {
     const value = redSlider.value
@@ -43,7 +44,7 @@ function setRandomColor() {
     const random_R = Math.floor(Math.random() * 256)
     const random_G = Math.floor(Math.random() * 256)
     const random_B = Math.floor(Math.random() * 256)
-    const random_RGB = `rgb(${random_R}, ${random_G}, ${random_B})`
+    random_RGB = `rgb(${random_R}, ${random_G}, ${random_B})`
     
     const randomColorContainer = document.getElementById('random-color-container')
     randomColorContainer.style.backgroundColor = random_RGB
@@ -51,8 +52,49 @@ function setRandomColor() {
 
 setRandomColor()
 
+// CHECK SCORE
+function secondCheck(rounded_similarity) {
+    if (rounded_similarity < 50) {
+        const score = 0
+        return score
+    } else {
+        const score = (rounded_similarity - 50) * 2
+        return score
+    }
+}
+
+
+function checkScore(random_RGB, guess_RGB) {
+    // conver random and guess rgb to lists
+    random_RGB = random_RGB.replace(/[rgb() ]/g, "")
+    random_RGB = random_RGB.split(",")
+    const ran_r = random_RGB[0]
+    const ran_g = random_RGB[1]
+    const ran_b = random_RGB[2]
+    
+    guess_RGB = guess_RGB.replace(/[rgb() ]/g, "")
+    guess_RGB = guess_RGB.split(",")
+    const gue_r = guess_RGB[0]
+    const gue_g = guess_RGB[1]
+    const gue_b = guess_RGB[2]
+
+    const distance = Math.sqrt(
+      Math.pow(gue_r - ran_r, 2) +
+      Math.pow(gue_g - ran_g, 2) +
+      Math.pow(gue_b - ran_b, 2)
+    )
+
+    const maxDistance = Math.sqrt(3 * Math.pow(255, 2));
+    const similarity = (1 - (distance / maxDistance)) * 100;
+
+    const rounded_similarity = Math.ceil(similarity)
+
+    return secondCheck(rounded_similarity)
+}
+
+
 // SUBMIT BUTTON
 function submitButton() {
     const guess_RGB = `rgb(${redGuess}, ${greenGuess}, ${blueGuess})`
-    console.log(guess_RGB)
+    console.log(checkScore(random_RGB, guess_RGB))
 }
