@@ -12,70 +12,84 @@
         <h1>Color Blitz</h1>
     </div>
 
-    <div class="game-top-section">
-        <div class="guess-label-container">
-            <h1 id="red-guess">0</h1>
-            <hr>
-            <h1 id="green-guess">0</h1>
-            <hr>
-            <h1 id="blue-guess">0</h1>
-        </div>
-        <div class="score-container">
-            <div class="score-numbers-container">
-                <div class="score1">
-                    <h1>0</h1>
+    <div class="game-main-container">
+        <div class="game-left-section">
+            <div class="top-section">
+                <div class="guess-label-container">
+                    <h1 id="red-guess">0</h1>
+                    <hr>
+                    <h1 id="green-guess">0</h1>
+                    <hr>
+                    <h1 id="blue-guess">0</h1>
                 </div>
-                <div class="score2">
-                    <h1>0</h1>
-                </div>
-                <div class="score3">
-                    <h1>0</h1>
-                </div>
-                <div class="score4">
-                    <h1>0</h1>
-                </div>
-                <div class="score5">
-                    <h1>0</h1>
+            </div>
+            <div class="bottom-section">
+                <div class="color-selector-container">
+                    <div class="red-selector">
+                        <h1 class="red-text">R</h1>
+                        <input type="range" min="0" max="255" value="0" class="redSlider" id="redInput">
+                    </div>
+                    <div class="green-selector">
+                        <h1 class="green-text">G</h1>
+                        <input type="range" min="0" max="255" value="0" class="greenSlider" id="greenInput">      
+                    </div>
+                    <div class="blue-selector">
+                        <h1 class="blue-text">B</h1>
+                        <input type="range" min="0" max="255" value="0" class="blueSlider" id="blueInput">      
+                    </div>
                 </div>
             </div>
         </div>
-        <div class="accuracy-container">
-            <div class="accuracy-score">
-                <h1>0</h1>
-                <h1>%</h1>
+        
+        <div class="game-mid-section">
+            <div class="top-section">
+                <div class="score-container">
+                    <div class="score-numbers-container">
+                        <div class="score1">
+                            <h1>0</h1>
+                        </div>
+                        <div class="score2">
+                            <h1>0</h1>
+                        </div>
+                        <div class="score3">
+                            <h1>0</h1>
+                        </div>
+                        <div class="score4">
+                            <h1>0</h1>
+                        </div>
+                        <div class="score5">
+                            <h1>0</h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <div class="submit-button-container">
+                    <div class="submit-button" onclick="submitButton()">
+                        <img src="images/enter.png">
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="game-right-section">
+            <div class="top-section">
+                <div class="accuracy-container">
+                    <div class="accuracy-score">
+                        <h1>0</h1>
+                        <h1>%</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="bottom-section">
+                <div class="colors-container">
+                    <div id="guess-color-container"></div>
+                    <hr>
+                    <div id="random-color-container"></div>
+                </div>
             </div>
         </div>
     </div>
-
-    <div class="game-bottom-section">
-        <div class="color-selector-container">
-            <div class="red-selector">
-                <h1 class="red-text">R</h1>
-                <input type="range" min="0" max="255" value="0" class="redSlider" id="redInput">
-            </div>
-            <div class="green-selector">
-                <h1 class="green-text">G</h1>
-                <input type="range" min="0" max="255" value="0" class="greenSlider" id="greenInput">      
-            </div>
-            <div class="blue-selector">
-                <h1 class="blue-text">B</h1>
-                <input type="range" min="0" max="255" value="0" class="blueSlider" id="blueInput">      
-            </div>
-        </div>
-
-        <div class="submit-button-container">
-            <div class="submit-button">
-                <img src="images/enter.png">
-            </div>
-        </div>
-
-        <div class="colors-container">
-            <div id="guess-color-container"></div>
-            <hr>
-            <div id="random-color-container"></div>
-        </div>
-    </div>
-
     <script src="script.js"></script>
 </body>
 </html>

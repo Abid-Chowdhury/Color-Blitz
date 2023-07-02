@@ -35,14 +35,36 @@ body {
     }
 }
 
-/* TOP SECTION */
-.game-top-section {
+/* MAIN CONTAINER */
+.game-main-container {
     display: flex;
     justify-content: space-between;
+
+    & .top-section {
+        width: 568px;
+    }
+    & .bottom-section {
+        width: 568px;
+    }
+}
+
+/* TOP SECTION */
+.top-section {
     margin-bottom: 50px;
 
     & div {
         display: flex;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+/* BOTTOM SECTION */
+.bottom-section {
+    height: 240px;
+    & div {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -72,42 +94,10 @@ body {
     }
 
     & hr {
-        height: 98%;
+        height: 100;
         margin: 0;
         border: 3px solid var(--accent);
     }
-}
-
-/* SCORE CONTAINER */
-.score-numbers-container {
-    & div {
-        background-color: var(--accent);
-        border-radius: 10px;
-        color: var(--bg-light);
-        border: 5px solid var(--accent);
-        margin-top: auto;
-        margin-bottom: auto;
-        margin-left: 3px;
-        margin-right: 3px;
-        padding-left: 30px;
-        padding-right: 30px;
-    }
-}
-
-/* ACCURACY CONTAINER */
-.accuracy-container {
-    background-color: var(--bg-light);
-    border-radius: 10px;
-    border: 5px solid var(--accent);
-    padding-left: 20px;
-    padding-right: 20px;
-    margin-left: 10%;
-}
-
-/* BOTTOM SECTION */
-.game-bottom-section {
-    display: flex;
-    justify-content: space-between;
 }
 
 /* COLOR SECLECTOR CONTAINER */
@@ -224,11 +214,24 @@ body {
     cursor: pointer;
 }
 
+/* SCORE CONTAINER */
+.score-numbers-container {
+    & div {
+        background-color: var(--accent);
+        border-radius: 10px;
+        color: var(--bg-light);
+        border: 5px solid var(--accent);
+        margin-top: auto;
+        margin-bottom: auto;
+        margin-left: 3px;
+        margin-right: 3px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
 /* SUBMIT BUTTON */
 .submit-button-container {
-    margin-top: auto;
-    margin-bottom: auto;
-
     & .submit-button {
         overflow: hidden;
         height: 140px;
@@ -258,13 +261,27 @@ body {
     }
 }
 
+/* ACCURACY CONTAINER */
+.accuracy-container {
+    background-color: var(--bg-light);
+    border-radius: 10px;
+    border: 5px solid var(--accent);
+    padding-left: 20px;
+    padding-right: 20px;
+    margin-left: 10%;
+    width: 60px;
+}
+
 /* COLORS CONTAINER */
 .colors-container {
     display: flex;
     background-color: var(--bg-light);
-    margin-left: 12%;
     border-radius: 10px;
     outline: 4px solid var(--accent);
+    width: 240px;
+    height: 200px;
+    margin-top: auto;
+    margin-bottom: auto;
 
     & div {
         height: 100%;
