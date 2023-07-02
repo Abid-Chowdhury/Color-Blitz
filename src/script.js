@@ -1,4 +1,4 @@
-// UPDATE COLOR INPUT VALUE
+// CONST
 const redSlider = document.getElementById('redInput')
 const redValueDisplay = document.getElementById('red-guess')
 const greenSlider = document.getElementById('greenInput')
@@ -6,11 +6,14 @@ const greenValueDisplay = document.getElementById('green-guess')
 const blueSlider = document.getElementById('blueInput')
 const blueValueDisplay = document.getElementById('blue-guess')
 
+// VAR
 var redGuess = 0
 var greenGuess = 0
 var blueGuess = 0
 var random_RGB = 0
+var totalScore = 0
 
+// UPDATE COLOR INPUT VALUE
 redSlider.addEventListener("input", () => {
     const value = redSlider.value
     redGuess = value
@@ -52,17 +55,29 @@ function setRandomColor() {
 
 setRandomColor()
 
-// CHECK SCORE
-function secondCheck(rounded_similarity) {
-    if (rounded_similarity < 50) {
-        const score = 0
-        return score
-    } else {
-        const score = (rounded_similarity - 50) * 2
-        return score
-    }
+// UPDATE SCORE
+function updateScoreDisplay(score, totalScore) {
+    
 }
 
+// UPDATE ACCURACY
+function updateAccuracyDisplay(score) {
+    const accuracyDisplay = document.getElementById('accuracy-int')
+    accuracyDisplay.innerHTML = score
+}
+
+// CHECK SCORE
+function secondCheck(rounded_similarity) {
+    var score = 0
+    if (rounded_similarity < 50) {
+        score = 0
+    } else {
+        score = (rounded_similarity - 50) * 2
+    }
+
+    updateAccuracyDisplay(score)
+    return score
+}
 
 function checkScore(random_RGB, guess_RGB) {
     // conver random and guess rgb to lists
