@@ -50,3 +50,9 @@ function setRandomColor() {
 }
 
 setRandomColor()
+
+// SUBMIT BUTTON
+function submitButton() {
+    const guess_RGB = `rgb(${redGuess}, ${greenGuess}, ${blueGuess})`
+    console.log(guess_RGB)
+}
