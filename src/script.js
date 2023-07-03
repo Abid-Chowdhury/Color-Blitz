@@ -11,7 +11,6 @@ var redGuess = 0
 var greenGuess = 0
 var blueGuess = 0
 var random_RGB = 0
-var totalScore = 0
 
 // UPDATE COLOR INPUT VALUE
 redSlider.addEventListener("input", () => {
@@ -56,8 +55,18 @@ function setRandomColor() {
 setRandomColor()
 
 // UPDATE SCORE
-function updateScoreDisplay(score, totalScore) {
+function updateScore(score) {
+    var score1 = document.getElementById('score1').innerHTML
+    var score2 = document.getElementById('score2').innerHTML
+    var score3 = document.getElementById('score3').innerHTML
+    var score4 = document.getElementById('score4').innerHTML
+    var score5 = document.getElementById('score5').innerHTML
     
+    // convert string to int
+    var scoreArray = score1 + score2 + score3 + score4 + score5
+    var currScore = parseInt(scoreArray)
+
+    var newScore = currScore + score
 }
 
 // UPDATE ACCURACY
@@ -76,6 +85,7 @@ function secondCheck(rounded_similarity) {
     }
 
     updateAccuracyDisplay(score)
+    updateScore(score)
     return score
 }
 
@@ -111,5 +121,5 @@ function checkScore(random_RGB, guess_RGB) {
 // SUBMIT BUTTON
 function submitButton() {
     const guess_RGB = `rgb(${redGuess}, ${greenGuess}, ${blueGuess})`
-    console.log(checkScore(random_RGB, guess_RGB))
+    checkScore(random_RGB, guess_RGB)
 }
