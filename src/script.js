@@ -56,17 +56,24 @@ setRandomColor()
 
 // UPDATE SCORE
 function updateScore(score) {
-    var score1 = document.getElementById('score1').innerHTML
-    var score2 = document.getElementById('score2').innerHTML
-    var score3 = document.getElementById('score3').innerHTML
-    var score4 = document.getElementById('score4').innerHTML
-    var score5 = document.getElementById('score5').innerHTML
+    var score1 = document.getElementById('score1')
+    var score2 = document.getElementById('score2')
+    var score3 = document.getElementById('score3')
+    var score4 = document.getElementById('score4')
+    var score5 = document.getElementById('score5')
     
     // convert string to int
-    var scoreArray = score1 + score2 + score3 + score4 + score5
+    var scoreArray = score1.innerHTML + score2.innerHTML + score3.innerHTML + score4.innerHTML + score5.innerHTML
     var currScore = parseInt(scoreArray)
 
     var newScore = currScore + score
+    
+    var newScoreLong = newScore.toString().padStart(5, '0')
+    score1.innerHTML = newScoreLong[0]
+    score2.innerHTML = newScoreLong[1]
+    score3.innerHTML = newScoreLong[2]
+    score4.innerHTML = newScoreLong[3]
+    score5.innerHTML = newScoreLong[4]
 }
 
 // UPDATE ACCURACY
