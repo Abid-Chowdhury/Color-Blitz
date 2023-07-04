@@ -13,25 +13,38 @@ var blueGuess = 0
 var random_RGB = 0
 
 // UPDATE COLOR INPUT VALUE
-redSlider.addEventListener("input", () => {
+function updateRedGuessValue() {
     const value = redSlider.value
     redGuess = value
     updateGuessColor()
     redValueDisplay.innerHTML = value
+    console.log('test')
+}
+
+redSlider.addEventListener("input", () => {
+    updateRedGuessValue()
 })
 
-greenSlider.addEventListener("input", () => {
+function updateGreenGuessValue() {
     const value = greenSlider.value
     greenGuess = value
     updateGuessColor()
     greenValueDisplay.innerHTML = value
+}
+
+greenSlider.addEventListener("input", () => {
+    updateGreenGuessValue()
 })
 
-blueSlider.addEventListener("input", () => {
+function updateBlueGuessValue() {
     const value = blueSlider.value
     blueGuess = value
     updateGuessColor()
     blueValueDisplay.innerHTML = value
+}
+
+blueSlider.addEventListener("input", () => {
+    updateBlueGuessValue()
 })
 
 // UPDATED GUESS COLOR CONTAINER
@@ -76,6 +89,19 @@ function updateScore(score) {
     score5.innerHTML = newScoreLong[4]
 }
 
+// RESET COLOR SELECTORS
+function resetColorSelectors() {
+    // Update guess slider value
+    redSlider.value = 0
+    greenSlider.value = 0
+    blueSlider.value = 0
+    
+    // Update guess display value
+    updateRedGuessValue()
+    updateGreenGuessValue()
+    updateBlueGuessValue()
+}
+
 // UPDATE ACCURACY
 function updateAccuracyDisplay(score) {
     const accuracyDisplay = document.getElementById('accuracy-int')
@@ -93,6 +119,8 @@ function secondCheck(rounded_similarity) {
 
     updateAccuracyDisplay(score)
     updateScore(score)
+    resetColorSelectors()
+    setRandomColor()
     return score
 }
 
