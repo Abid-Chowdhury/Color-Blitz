@@ -289,6 +289,7 @@ body {
     }
 
     & #guess-color-container {
+        background-color: black;
         border-top-left-radius: 10px;
         border-bottom-left-radius: 10px;
     }
